@@ -50,3 +50,7 @@
 
 ## 6) Установка Entware
 [Инструкция по установке EntWare на сайте Keenetic](https://help.keenetic.com/hc/ru/articles/360021214160).  
+***
+***
+
+# [<< Назад](/../../)
