@@ -1,0 +1,51 @@
+#!/bin/sh
+
+ENABLED=yes
+PROCS=/opt/bin/amneziawg-go
+PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+DESC="AmneziaWG OpkgTun"
+
+OPKGTUN_INTERFACE="opkgtun0"
+
+start() {
+    echo "Starting AmneziaWG $OPKGTUN_INTERFACE interface..."
+
+    $PROCS $OPKGTUN_INTERFACE &
+    sleep 5
+    if [ -d "/sys/class/net/$OPKGTUN_INTERFACE" ]; then
+        ip link set dev $OPKGTUN_INTERFACE up
+        /opt/bin/awg setconf $OPKGTUN_INTERFACE /opt/etc/amnezia/amneziawg/awg0-opkg.conf
+        echo "Configured awg-opkg: $OPKGTUN_INTERFACE "
+    fi
+}
+
+stop() {
+    echo "Stopping AmneziaWG $OPKGTUN_INTERFACE interface..."
+    killall amneziawg-go 2>/dev/null
+    ip link set dev $OPKGTUN_INTERFACE down 
+}
+
+status() {
+    awg show $OPKGTUN_INTERFACE | grep "latest"
+    echo ==============================================
+    ip -c -br link show dev $OPKGTUN_INTERFACE
+#    ip -c -s -h link show dev $OPKGTUN_INTERFACE
+    echo ==============================================
+    echo "$OPKGTUN_INTERFACE returned VPS adress:" && curl --interface opkgtun0 ifconfig.me --max-time 2
+}
+
+case "$1" in
+  start) start ;;
+  stop) stop ;;
+  restart)
+    stop
+    sleep 2
+    start
+    ;;
+  status) status
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|status}"
+    exit 1
+    ;;
+esac
