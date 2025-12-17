@@ -1,48 +1,53 @@
 #!/bin/sh
 
+# v2025-12-16
 ENABLED=yes
 PROCS=/opt/bin/amneziawg-go
 PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 DESC="AmneziaWG OpkgTun"
 
+# Настройки для пользователей
 OPKGTUN_INTERFACE="opkgtun0"
+AWG_CONF="/opt/etc/amnezia/amneziawg/awg0-opkgtun0.conf"
+# Конец настроек для пользователей
 
-start() {
+
+cmd_start() {
     echo "Starting AmneziaWG $OPKGTUN_INTERFACE interface..."
 
     $PROCS $OPKGTUN_INTERFACE &
     sleep 5
     if [ -d "/sys/class/net/$OPKGTUN_INTERFACE" ]; then
         ip link set dev $OPKGTUN_INTERFACE up
-        /opt/bin/awg setconf $OPKGTUN_INTERFACE /opt/etc/amnezia/amneziawg/awg0-opkg.conf
+        /opt/bin/awg setconf $OPKGTUN_INTERFACE $AWG_CONF
         echo "Configured awg-opkg: $OPKGTUN_INTERFACE "
     fi
 }
 
-stop() {
-    echo "Stopping AmneziaWG $OPKGTUN_INTERFACE interface..."
+cmd_stop() {
+    echo "Stopping AmneziaWG and $OPKGTUN_INTERFACE interface..."
     killall amneziawg-go 2>/dev/null
     ip link set dev $OPKGTUN_INTERFACE down 
 }
 
-status() {
+cmd_status() {
     awg show $OPKGTUN_INTERFACE | grep "latest"
-    echo ==============================================
+    echo =============================================================
     ip -c -br link show dev $OPKGTUN_INTERFACE
 #    ip -c -s -h link show dev $OPKGTUN_INTERFACE
-    echo ==============================================
+    echo =============================================================
     echo "$OPKGTUN_INTERFACE returned VPS adress:" && curl --interface opkgtun0 ifconfig.me --max-time 2
 }
 
 case "$1" in
-  start) start ;;
-  stop) stop ;;
+  start) cmd_start ;;
+  stop) cmd_stop ;;
   restart)
-    stop
+    cmd_stop
     sleep 2
-    start
+    cmd_start
     ;;
-  status) status
+  status) cmd_status
     ;;
   *)
     echo "Usage: $0 {start|stop|restart|status}"
