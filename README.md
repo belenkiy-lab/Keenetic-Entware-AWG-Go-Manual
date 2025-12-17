@@ -1,12 +1,12 @@
-*v2025-12-17*
+<span style="color:green">*v2025-12-17*</span>
 # Инструкция по работе Keenetic Entware + AWG-Go 1.5
 
 
 ## Введение
 Разумеется данная инструкция предназначена исключительно для изучения работы протоколов, а не для обхода заблокированных на территории РФ материалов.
-
-#### В статье будет рассмотрен только вариант установки на **внешний носитель**.
-#### Я буду рассартирвать в качестве примера установку на ***KN-1913*** (Viva).
+#### В статье будет рассмотрен только вариант установки на **внешний носитель**.  
+#### Я буду рассартирвать в качестве примера установку на ***KN-1913*** (Viva).  
+### Все действия Вы выполняяте на свой страх и риск.  
 ***
 
 ## Официальные инструкции Keenetic
@@ -14,7 +14,7 @@
 ***
 
 ## Официальные инструкции Netcraze
-Так же подходят ***только*** модели с USB. У Netcraze инструкция по установке Entware есть для каждой модели отдельно. Для этого надо:
+Так же подходят ***только*** модели с USB. У Netcraze инструкция по установке Entware есть для каждой модели отдельно. Для этого надо:  
 * Перейти в [раздел поддержки Netcraze](https://support.netcraze.ru/)
 * Ввести номер модели устройства:  
 ![Netcraze Support](blob/00__Preparing/!img/00__Netcraze_instr_1.png)  
@@ -25,16 +25,16 @@
 ***
 
 # Оглавление
-* [Подготовка](00__Preparing/Preparing.md)
+* [Подготовка](00__Preparing/Preparing.md)  
 * [Установка модуля AWG-Go для Entware](01__Entware_AWG-Go_Install/Entware_AWG-Go_Install.md)  
   * [Использование модуля AWG-Go на KeenOS 4.3](02__KeenOS_4.3/KeenOS_4.3.md)  
   * [Использование модуля AWG-Go на KeenOS 5.0](02__KeenOS_5.0_(OpkgTun)/KeenOS_5.0_(OpkgTun).md)  
 ***
 
 # Полезные ссылки
-* [Нативная поддержка AWG 1.5\2.0 в прошивке Keenetic](https://forum.keenetic.ru/topic/21777-amneziawg-15-%D0%B8-20/)
-* [Тема форума про модуль AWG-Go для Entware](https://forum.keenetic.ru/topic/18794-amneziawg-go-%D0%B4%D0%BB%D1%8F-entware/)  
-* [Список готовых пакетов *i1...i5* для протокола AWG](https://voidwaifu.github.io/Special-Junk-Packet-List/)  
 * [Описание протокола AWG и пераметров конфигурации](https://storage.googleapis.com/amnezia/docs?m-path=/ru/documentation/amnezia-wg)  
-
-
+* [Список готовых пакетов *i1...i5* для протокола AWG](https://voidwaifu.github.io/Special-Junk-Packet-List/)  
+* [Нативная поддержка AWG 1.5\2.0 в прошивке Keenetic](https://forum.keenetic.ru/topic/21777-amneziawg-15-%D0%B8-20/)  
+* [Тема форума про модуль AWG-Go для Entware](https://forum.keenetic.ru/topic/18794-amneziawg-go-%D0%B4%D0%BB%D1%8F-entware/)  
+* [Архив прошивок Keenetic](https://osvault.keenetic.net/)  
+* [Архив прошивок Netcraze](https://osvault.netcraze.ru/)  
