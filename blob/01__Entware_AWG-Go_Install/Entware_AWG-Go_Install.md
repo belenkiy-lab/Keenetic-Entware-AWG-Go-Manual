@@ -56,8 +56,8 @@ opkg install mc htop curl
 [Оригинальный пост](https://forum.keenetic.ru/topic/18794-amneziawg-go-%D0%B4%D0%BB%D1%8F-entware/page/9/#findComment-227700) от zyxmon на форуме Keenetic.  
 
 В зависимости от процессора роутера, требуется скачать нужный набор двух пакетов:  
-* *amneziawg-go_v0.2.16-1_\*.ipk  
-* amneziawg-tools_1.0.20250903-2_\*.ipk*  
+* *amneziawg-go_v0.2.16-1_\*.ipk*  
+* *amneziawg-tools_1.0.20250903-2_\*.ipk*  
 
 Какой у Вас тип ЦП - можно определить по имени архива, кторый Вы использовали для установки Entware на роутер.  
 Если у Вас совсем старый тип ЦП ***mips***, то пакеты нужно брать из [данного поста](https://forum.keenetic.ru/topic/18794-amneziawg-go-%D0%B4%D0%BB%D1%8F-entware/page/2/#findComment-218087).  
