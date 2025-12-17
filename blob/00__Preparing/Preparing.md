@@ -50,7 +50,14 @@
 
 ## 6) Установка Entware
 [Инструкция по установке EntWare на сайте Keenetic](https://help.keenetic.com/hc/ru/articles/360021214160).  
-***
-***
 
-# [<< Назад](/../../../)
+При установке Entware в логах роутера может быть такая ошибка:  
+![KeenOS entware install invalid initrc](!img/08__Entware_install_err.png)  
+Это нормально, т.к. это новая установка и скрипта инициализации логично нет на флешке.  
+
+Дожидаемся окончания установки:  
+![KeenOS entware install DONE](!img/09__Entware_install_DONE.png)  
+***
+***
+### [Установка модуля AWG-Go для Entware >>](/../../../blob/01__Entware_AWG-Go_Install/Entware_AWG-Go_Install.md)
+# [<< На главную](/../../../)
