@@ -30,9 +30,9 @@ root           | Имя пользователя entware
 ### При вводе пароля в окне не отображается ввод символов!  
 
 В случае успешного подключения увидим строку вида:  
->BusyBox v1.37.0 (2025-06-01 14:50:09 UTC) built-in shell (ash)  
+> BusyBox v1.37.0 (2025-06-01 14:50:09 UTC) built-in shell (ash)  
 >  
->~ #  
+> \~ \#  
 
 ![Entware ssh connection succeess](!img/03__SSH_connected_to_entware.png)
 
