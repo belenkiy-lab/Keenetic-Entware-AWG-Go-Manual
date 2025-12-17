@@ -25,10 +25,10 @@
 ***
 
 # Оглавление
-* [Подготовка](00__Preparing/Preparing.md)  
-* [Установка модуля AWG-Go для Entware](01__Entware_AWG-Go_Install/Entware_AWG-Go_Install.md)  
-  * [Использование модуля AWG-Go на KeenOS 4.3](02__KeenOS_4.3/KeenOS_4.3.md)  
-  * [Использование модуля AWG-Go на KeenOS 5.0](02__KeenOS_5.0_(OpkgTun)/KeenOS_5.0_(OpkgTun).md)  
+* [Подготовка](blob/00__Preparing/Preparing.md)  
+* [Установка модуля AWG-Go для Entware](blob/01__Entware_AWG-Go_Install/Entware_AWG-Go_Install.md)  
+  * [Использование модуля AWG-Go на KeenOS 4.3](blob/02__KeenOS_4.3/KeenOS_4.3.md)  
+  * [Использование модуля AWG-Go на KeenOS 5.0](blob/02__KeenOS_5.0_(OpkgTun)/KeenOS_5.0_(OpkgTun).md)  
 ***
 
 # Полезные ссылки
