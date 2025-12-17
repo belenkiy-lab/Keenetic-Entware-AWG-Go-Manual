@@ -1,3 +1,4 @@
+<span style="color:green">*v2025-12-17*</span>
 # Подготовка
 Для собственного удобства я буду использовать редактор [Notepad++](https://github.com/notepad-plus-plus/notepad-plus-plus).  
 
