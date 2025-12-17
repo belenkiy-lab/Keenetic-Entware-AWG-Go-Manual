@@ -76,6 +76,6 @@ opkg install /opt/root/awg2-go/*.ipk
 
 ***
 ***
-### [Использование AWG-Go c KeenOS 4.3 >>](/../../blob/02__KeenOS_4.3/KeenOS_4.3.md)  
-### [Использование AWG-Go c KeenOS 5.0 через OpkgTun >>](/../../blob/02__KeenOS_5.0_(OpkgTun)/KeenOS_5.0_(OpkgTun).md)
+### [Использование AWG-Go c KeenOS 4.3 >>](/../../blob/main/blob/02__KeenOS_4.3/KeenOS_4.3.md)  
+### [Использование AWG-Go c KeenOS 5.0 через OpkgTun >>](/../../blob/main/blob/02__KeenOS_5.0_(OpkgTun)/KeenOS_5.0_(OpkgTun).md)
 # [<< На главную](/../../../)
