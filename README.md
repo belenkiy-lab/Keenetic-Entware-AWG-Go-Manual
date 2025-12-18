@@ -1,4 +1,4 @@
-<span style="color:green">*v2025-12-17*</span>
+$\textcolor{green}{\text{v2025-12-17}}$
 # Инструкция по работе Keenetic Entware + AWG-Go 1.5
 
 

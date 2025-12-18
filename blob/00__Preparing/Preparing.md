@@ -1,4 +1,4 @@
-<span style="color:green">*v2025-12-17*</span>
+$\textcolor{green}{\text{v2025-12-17}}$
 # Подготовка
 Для собственного удобства я буду использовать редактор [Notepad++](https://github.com/notepad-plus-plus/notepad-plus-plus).  
 

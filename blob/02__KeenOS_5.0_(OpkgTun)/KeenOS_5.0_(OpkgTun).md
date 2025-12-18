@@ -1,5 +1,7 @@
-<span style="color:green">*v2025-12-17*</span>
-# Пока тут заглушка
+$\textcolor{green}{\text{v2025-12-18}}$
+# Использование AWG-Go c KeenOS 5.0
+***
+
 
 ***
 ***

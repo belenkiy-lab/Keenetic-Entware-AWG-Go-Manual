@@ -1,4 +1,4 @@
-<span style="color:green">*v2025-12-17*</span>
+$\textcolor{green}{\text{v2025-12-17}}$
 # 1) Включаем DoT/DoH, отключаем транзит запросов.
  Вы можете подобрать DoH сервер по своему вкусу, например [отсюда](https://github.com/curl/curl/wiki/DNS-over-HTTPS).
 ![KeenOS DoH DoT](!img/01__KeenOS_DoH-DoT.png)
@@ -62,7 +62,7 @@ opkg install mc htop curl
 Какой у Вас тип ЦП - можно определить по имени архива, который Вы использовали для установки Entware на роутер.  
 Если у Вас совсем старый тип ЦП ***mips***, то пакеты нужно брать из [данного поста](https://forum.keenetic.ru/topic/18794-amneziawg-go-%D0%B4%D0%BB%D1%8F-entware/page/2/#findComment-218087).  
 В данных пакетах для процессора ***mips*** нет скрипта *awg-quick*! Я его работу не проверял!  
-#### Альтернативные ссылки: [aarch64](aarch64_awg-go/) | [mipsel](mipsel_awg-go/)  
+#### Альтернативные ссылки: [aarch64 (*2025-12-07*)](aarch64_awg-go/)   ||  [mipsel (*2025-12-07*)](mipsel_awg-go/)  
 
 Копируем файлы *amneziawg-go_v0.2.16-1_\*.ipk* и *amneziawg-tools_1.0.20250903-2_\*.ipk* на роутер через общую сетевую папку, например в папку *root/awg2-go/*:  
 ![Copy ipk's](!img/07__Copy_ipk.png)  
@@ -77,5 +77,5 @@ opkg install /opt/root/awg2-go/*.ipk
 ***
 ***
 ### [Использование AWG-Go c KeenOS 4.3 >>](/../../blob/main/blob/02__KeenOS_4.3/KeenOS_4.3.md)  
-### [Использование AWG-Go c KeenOS 5.0 через OpkgTun >>](/../../blob/main/blob/02__KeenOS_5.0_(OpkgTun)/KeenOS_5.0_(OpkgTun).md)  
+### [Использование AWG-Go c KeenOS 5.0 >>](/../../blob/main/blob/02__KeenOS_5.0_(OpkgTun)/KeenOS_5.0_(OpkgTun).md)  
 # [<< На главную](/../../../)
