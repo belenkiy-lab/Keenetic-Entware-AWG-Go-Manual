@@ -3,7 +3,7 @@
  Вы можете подобрать DoH сервер по своему вкусу, например [отсюда](https://github.com/curl/curl/wiki/DNS-over-HTTPS).
 ![KeenOS DoH DoT](!img/01__KeenOS_DoH-DoT.png)
 
-В идеале ещё всключить игнорирование DNS провайдера:  
+В идеале ещё включить игнорирование DNS провайдера:  
 ![KeenOS ignore DNS](!img/01__KeenOS_ignore-DNS.png)
 
 
@@ -12,7 +12,7 @@
 Вам следует использовать IP адрес своего роутера.  
 
 Для этого требуется запустить любой ssh-клиент.  
-В данной статье рассмативается встроенный в Windows 11/10 клиент ssh. 
+В данной статье рассматривается встроенный в Windows 11/10 клиент ssh. 
 
 ![Entware ssh connection](!img/02__SSH_connect_to_entware.png)  
 1) Подключаемся  
@@ -26,7 +26,7 @@ root           | Имя пользователя entware
 -p222          | Подключение к порту 222  
 2) Вопрос *Are you sure you want to continue connecting (yes/no/[fingerprint])? yes* появляется только если подключение ранее не осуществлялось, или изменился отвечаток учтройства.  
 Вручную пишем ***yes*** и жмём *Enter*.  
-3) Вводим пароль от пользователя *root*. По умолчанию это *keenetic*, если Вы не меняли пароль самостоятельно. О смене пароля пользоваелю root есть в [оригинальной статье по установке Entware](https://help.keenetic.com/hc/ru/articles/360021214160).  
+3) Вводим пароль от пользователя *root*. По умолчанию это *keenetic*, если Вы не меняли пароль самостоятельно. О смене пароля пользователю *root* есть в [оригинальной статье по установке Entware](https://help.keenetic.com/hc/ru/articles/360021214160).  
 ### При вводе пароля в окне не отображается ввод символов!  
 
 В случае успешного подключения увидим строку вида:  
@@ -34,7 +34,7 @@ root           | Имя пользователя entware
 >  
 > \~ \#  
 
-![Entware ssh connection succeess](!img/03__SSH_connected_to_entware.png)
+![Entware ssh connection success](!img/03__SSH_connected_to_entware.png)
 
 
 # 3) Обновление пакетов Entware и установка дополнительных  
@@ -45,7 +45,7 @@ opkg update && opkg upgrade
 ![opkg update & opgrade](!img/05__opkg-upd_and_upg_DONE.png)  
 
 Устанавливаем дополнительные пакеты:  
-Справедлирости ради, обязателен тут только *curl*  
+Справедливости ради, обязателен тут только *curl*  
 ```shell
 opkg install mc htop curl
 ```
@@ -59,7 +59,7 @@ opkg install mc htop curl
 * *amneziawg-go_v0.2.16-1_\*.ipk*  
 * *amneziawg-tools_1.0.20250903-2_\*.ipk*  
 
-Какой у Вас тип ЦП - можно определить по имени архива, кторый Вы использовали для установки Entware на роутер.  
+Какой у Вас тип ЦП - можно определить по имени архива, который Вы использовали для установки Entware на роутер.  
 Если у Вас совсем старый тип ЦП ***mips***, то пакеты нужно брать из [данного поста](https://forum.keenetic.ru/topic/18794-amneziawg-go-%D0%B4%D0%BB%D1%8F-entware/page/2/#findComment-218087).  
 В данных пакетах для процессора ***mips*** нет скрипта *awg-quick*! Я его работу не проверял!  
 #### Альтернативные ссылки: [aarch64](aarch64_awg-go/) | [mipsel](mipsel_awg-go/)  
