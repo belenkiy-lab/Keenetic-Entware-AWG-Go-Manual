@@ -97,12 +97,56 @@ opkg update && opkg install magitrickle
 ![DNS leaks check](!img/10__Check-DNSLeaks.png)  
 > $\textcolor{ORANGE}{\text{Если настройка DoT/DoH на роутере была выполнена корректно, в браузере отключены всякие "безопасные DNS", то в списке не должно быть лишних  DNS.}}$  
 
-```diff
-! Если настройка DoT/DoH на роутере была выполнена корректно, в браузере отключены всякие "безопасные DNS", то в списке не должно быть лишних  DNS.
-```  
 Т.е. в примере настройки DoT/DoH на роутере указано 2 DoH сервера *Google* и *Quad9*, а значит никаких Российских DNS не должно быть обнаружено при выполнении *DNS Leak Test*.  
 
 
+## 6) Описание типов правил  
+### Namespace (Именное пространство)  
+Охватывает указанный домен и все его поддомены.  
+Например, при записи `example.com` будут обрабатываться:
+```
+✅ example.com
+✅ sub.example.com
+✅ sub.sub.example.com
+❌ anotherexample.com
+❌ example.net
+```
+
+### Wildcard (Подстановочный шаблон)  
+Шаблон с `*` и `?` — позволяет задавать гибкие условия:
+- `*` — любое количество любых символов
+- `?` — ровно один любой символ  
+
+Например, при записи `*example.com` будут обрабатываться:
+```
+✅ example.com
+✅ sub.example.com
+✅ sub.sub.example.com
+✅ anotherexample.com
+❌ example.net
+```
+
+### Domain (Точный домен)  
+Правило применяется только к строго указанному домену, без поддоменов.  
+Например, при записи `sub.example.com` будут обрабатываться:
+```
+❌ example.com
+✅ sub.example.com
+❌ sub.sub.example.com
+❌ anotherexample.com
+❌ example.net
+```
+
+### RegExp (Регулярное выражение)  
+Для опытных пользователей. Используется парсер [dlclark/regexp2](https://github.com/dlclark/regexp2).  
+Например, при записи `^[a-z]*example\.com$` будут обрабатываться:
+```
+✅ example.com
+❌ sub.example.com
+❌ sub.sub.example.com
+✅ anotherexample.com
+❌ example.net
+```
 ***
 ***
 # [<< На главную](/../../../)
