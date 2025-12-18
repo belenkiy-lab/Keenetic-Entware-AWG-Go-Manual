@@ -1,5 +1,8 @@
 $\textcolor{green}{\text{v2025-12-17}}$
-# 1) Включаем DoT/DoH, отключаем транзит запросов.
+
+# Установка модуля AWG-Go для Entware
+
+## 1) Включаем DoT/DoH, отключаем транзит запросов.
  Вы можете подобрать DoH сервер по своему вкусу, например [отсюда](https://github.com/curl/curl/wiki/DNS-over-HTTPS).
 ![KeenOS DoH DoT](!img/01__KeenOS_DoH-DoT.png)
 
@@ -7,7 +10,7 @@ $\textcolor{green}{\text{v2025-12-17}}$
 ![KeenOS ignore DNS](!img/01__KeenOS_ignore-DNS.png)
 
 
-# 2) Подключаемся по SSH к Entware роутера
+## 2) Подключаемся по SSH к Entware роутера
 ### Мой роутер имеет IP ***192.168.10.1***  
 Вам следует использовать IP адрес своего роутера.  
 
@@ -28,6 +31,7 @@ root           | Имя пользователя entware
 Вручную пишем ***yes*** и жмём *Enter*.  
 3) Вводим пароль от пользователя *root*. По умолчанию это *keenetic*, если Вы не меняли пароль самостоятельно. О смене пароля пользователю *root* есть в [оригинальной статье по установке Entware](https://help.keenetic.com/hc/ru/articles/360021214160).  
 ### При вводе пароля в окне не отображается ввод символов!  
+### Настоятельно рекомендуется сменить пароль по умолчанию на свой.
 
 В случае успешного подключения увидим строку вида:  
 > BusyBox v1.37.0 (2025-06-01 14:50:09 UTC) built-in shell (ash)  
@@ -37,7 +41,7 @@ root           | Имя пользователя entware
 ![Entware ssh connection success](!img/03__SSH_connected_to_entware.png)
 
 
-# 3) Обновление пакетов Entware и установка дополнительных  
+## 3) Обновление пакетов Entware и установка дополнительных  
 Вводим и выполняем в консоли ssh:  
 ```shell
 opkg update && opkg upgrade
@@ -52,7 +56,7 @@ opkg install mc htop curl
 ![opkg install mc htop curl](!img/06__opkg-inst_mc_htop_curl.png)  
 
 
-# 4) Установка AmneziaWG-Go для Entware  
+## 4) Установка AmneziaWG-Go для Entware  
 [Оригинальный пост](https://forum.keenetic.ru/topic/18794-amneziawg-go-%D0%B4%D0%BB%D1%8F-entware/page/9/#findComment-227700) от zyxmon на форуме Keenetic.  
 
 В зависимости от процессора роутера, требуется скачать нужный набор двух пакетов:  

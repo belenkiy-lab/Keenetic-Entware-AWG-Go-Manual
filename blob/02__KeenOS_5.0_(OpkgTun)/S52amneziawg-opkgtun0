@@ -20,7 +20,7 @@ cmd_start() {
     if [ -d "/sys/class/net/$OPKGTUN_INTERFACE" ]; then
         ip link set dev $OPKGTUN_INTERFACE up
         /opt/bin/awg setconf $OPKGTUN_INTERFACE $AWG_CONF
-        echo "Configured awg-opkg: $OPKGTUN_INTERFACE "
+        echo "Configured awg-opkgtun: $OPKGTUN_INTERFACE "
     fi
 }
 

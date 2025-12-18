@@ -1,5 +1,6 @@
 $\textcolor{green}{\text{v2025-12-17}}$
 # Инструкция по работе Keenetic Entware + AWG-Go 1.5
+***
 
 
 ## Введение
@@ -38,3 +39,7 @@ $\textcolor{green}{\text{v2025-12-17}}$
 * [Тема форума про модуль AWG-Go для Entware](https://forum.keenetic.ru/topic/18794-amneziawg-go-%D0%B4%D0%BB%D1%8F-entware/)  
 * [Архив прошивок Keenetic](https://osvault.keenetic.net/)  
 * [Архив прошивок Netcraze](https://osvault.netcraze.ru/)  
+* MagiTrickle: [GitHub](https://github.com/MagiTrickle/MagiTrickle) | [Site](https://magitrickle.dev) | [Keenetic Forum](https://forum.keenetic.ru/topic/20125-magitrickle)  
+* Сайты, где можно взять готовые списки доменных имён:  
+  * https://iplist.opencck.org/
+  * https://beta.iplist.opencck.org/

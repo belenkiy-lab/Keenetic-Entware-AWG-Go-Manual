@@ -2,9 +2,10 @@ $\textcolor{green}{\text{v2025-12-18}}$
 
 # Использование AWG-Go c KeenOS 4.3  
 ***
+
 ## 1) Загружаем conf-файл на роутер  
 На этапе подготовки был сделан файл *awg0.conf* с вписанными в него параметрами *i1...i5*.  
-Данный файл требуется загрузить в роутер по пути /opt/etc/amnezia/amneziawg/ или же через общую сетевую папку:  
+Данный файл требуется загрузить в роутер по пути */opt/etc/amnezia/amneziawg/* или же через общую сетевую папку:  
 ![Copy conf-file](!img/01__Copy_awg0.png)  
 
 
@@ -13,7 +14,7 @@ $\textcolor{green}{\text{v2025-12-18}}$
 ```shell
 /opt/etc/init.d/S89amnezia-wg-quick start
 ```
-В консоли запуск выглядит примерно так:  
+В ssh-терминале запуск выглядит примерно так:  
 ![Starting awg-go](!img/02__Start_awg-go.png)  
 > $\textcolor{ORANGE}{\text{На сообщение в рамке не нужно обращать внимания, оно появляется у всех!}}$  
 
@@ -23,7 +24,7 @@ $\textcolor{green}{\text{v2025-12-18}}$
 ```shell
 curl --interface awg0 http://myip.wtf/json
 ```
-В выводе консоли должно быть примерно следующее:  
+В выводе ssh-терминала должно быть примерно следующее:  
 ![Check connection](!img/03__Check-conn.png)  
 Т.е. должно вернуть как минимум IP, указанный как Endpoint в файле *awg0.conf*.  
 
@@ -31,7 +32,7 @@ curl --interface awg0 http://myip.wtf/json
 ```shell
 ifconfig awg0
 ```
-В выводе консоли должно быть примерно следующее:  
+В выводе ssh-терминала должно быть примерно следующее:  
 ![ifconfig check](!img/04__Check_ifconfig.png)  
 Где:  
 Значение | Описание
@@ -66,7 +67,7 @@ opkg update && opkg install magitrickle
 /opt/etc/init.d/S99magitrickle restart
 ```
 
-В выводе консоли должно быть примерно следующее:  
+В выводе ssh-терминала должно быть примерно следующее:  
 ![ifconfig check](!img/05__opkg-inst_MT.png)  
 
 
@@ -147,6 +148,8 @@ opkg update && opkg install magitrickle
 ✅ anotherexample.com
 ❌ example.net
 ```
+
+
 ***
 ***
 # [<< На главную](/../../../)
