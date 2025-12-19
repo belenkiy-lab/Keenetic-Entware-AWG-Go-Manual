@@ -1,10 +1,11 @@
 #!/bin/sh
 
-# v2025-12-16
+# v2025-12-20
 ENABLED=yes
 PROCS=/opt/bin/amneziawg-go
 PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 DESC="AmneziaWG OpkgTun"
+PROGRAM="${0##*/}"
 
 # Настройки для пользователей
 OPKGTUN_INTERFACE="opkgtun0"
@@ -13,30 +14,58 @@ AWG_CONF="/opt/etc/amnezia/amneziawg/awg0-opkgtun0.conf"
 
 
 cmd_start() {
-    echo "Starting AmneziaWG $OPKGTUN_INTERFACE interface..."
-
-    $PROCS $OPKGTUN_INTERFACE &
-    sleep 5
-    if [ -d "/sys/class/net/$OPKGTUN_INTERFACE" ]; then
-        ip link set dev $OPKGTUN_INTERFACE up
-        /opt/bin/awg setconf $OPKGTUN_INTERFACE $AWG_CONF
-        echo "Configured awg-opkgtun: $OPKGTUN_INTERFACE "
+    [[ -e $AWG_CONF ]] || die "AWG config-file \`$AWG_CONF' does not exist!"
+    if pgrep -f "$PROCS $OPKGTUN_INTERFACE"  > /dev/null; then
+        echo ""
+        echo "AmneziaWG for $OPKGTUN_INTERFACE already running!"
+        echo "Use '$PROGRAM restart' if you need restart this interface."
+        echo ""
+    else
+        echo "Starting AmneziaWG $OPKGTUN_INTERFACE interface..."
+        $PROCS $OPKGTUN_INTERFACE &
+        sleep 5
+        if [ -d "/sys/class/net/$OPKGTUN_INTERFACE" ]; then
+            ip link set dev $OPKGTUN_INTERFACE up
+            /opt/bin/awg setconf $OPKGTUN_INTERFACE $AWG_CONF
+            echo "Configured awg-opkgtun: $OPKGTUN_INTERFACE "
+            echo ""
+        fi
     fi
 }
 
 cmd_stop() {
-    echo "Stopping AmneziaWG and $OPKGTUN_INTERFACE interface..."
-    killall amneziawg-go 2>/dev/null
-    ip link set dev $OPKGTUN_INTERFACE down 
+    if pgrep -f "$PROCS $OPKGTUN_INTERFACE"  > /dev/null; then
+        echo ""
+        echo "Stopping AmneziaWG and $OPKGTUN_INTERFACE interface..."
+        kill -9 $(pgrep -f "$PROCS $OPKGTUN_INTERFACE") > /dev/null 2>&1
+        ip link set dev $OPKGTUN_INTERFACE down 
+        echo "...done!"
+        echo ""
+    else
+        echo ""
+        echo "AmneziaWG for $OPKGTUN_INTERFACE NOT running!"
+        echo ""
+    fi
 }
 
 cmd_status() {
-    awg show $OPKGTUN_INTERFACE | grep "latest"
     echo =============================================================
     ip -c -br link show dev $OPKGTUN_INTERFACE
 #    ip -c -s -h link show dev $OPKGTUN_INTERFACE
     echo =============================================================
-    echo "$OPKGTUN_INTERFACE returned VPS adress:" && curl --interface opkgtun0 ifconfig.me --max-time 2
+    if pgrep -f "$PROCS $OPKGTUN_INTERFACE"  > /dev/null; then
+        awg show $OPKGTUN_INTERFACE | grep "latest"
+        echo =============================================================
+        echo "$OPKGTUN_INTERFACE returned VPS adress:" && curl --interface opkgtun0 ifconfig.me --max-time 2
+        echo ""
+        echo =============================================================
+        echo "" && exit 1
+    fi
+}
+
+die() {
+    echo "$PROGRAM: $*" >&2
+    exit 1
 }
 
 case "$1" in
