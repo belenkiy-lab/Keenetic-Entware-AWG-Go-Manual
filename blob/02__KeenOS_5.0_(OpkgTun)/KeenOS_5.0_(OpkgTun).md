@@ -74,7 +74,7 @@ $\textcolor{green}{\text{v2025-12-19}}$
 Для работы AWG-Go с интерфейсом ***OpkgTun0*** требуется добавить в роутер другой скрипт запуска *S52amneziawg-opkgtun0*.  
 Скачать скрипт в папку запуска можно вводом команды:  
 ``` shell
-cd /opt/etc/init.d/ && curl -OLf "https://gitlab.com/ShidlaSGC/keenetic-entware-awg-go/-/raw/main/blob/02__KeenOS_5.0_(OpkgTun)/S52amneziawg-opkgtun0"
+cd /opt/etc/init.d/ && curl -OLf "https://gitlab.com/ShidlaSGC/keenetic-entware-awg-go/-/raw/main/blob/02__KeenOS_5.0_(OpkgTun)/S52amneziawg-opkgtun0" && chmod +x S52amneziawg-opkgtun0
 ```
 
 Так же если требуется отключить автозапуск  */opt/etc/init.d/S89amnezia-wg-quick*- нужно переименовать *S89amnezia-wg-quick* в ***K**89amnezia-wg-quick*. Это можно сделать или через общую сетевую папку или через команду:  
