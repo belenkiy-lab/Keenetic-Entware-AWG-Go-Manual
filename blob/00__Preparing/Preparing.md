@@ -1,4 +1,4 @@
-$\textcolor{green}{\text{v2025-12-17}}$
+$\textcolor{green}{\text{v2025-12-19}}$
 # Подготовка
 Для собственного удобства я буду использовать редактор [Notepad++](https://github.com/notepad-plus-plus/notepad-plus-plus).  
 

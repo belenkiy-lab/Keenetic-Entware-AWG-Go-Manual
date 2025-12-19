@@ -1,4 +1,4 @@
-$\textcolor{green}{\text{v2025-12-17}}$
+$\textcolor{green}{\text{v2025-12-19}}$
 
 # Установка модуля AWG-Go для Entware
 
@@ -28,7 +28,7 @@ $\textcolor{green}{\text{v2025-12-17}}$
 root           | Имя пользователя entware
 192.168.10.1   | Адрес роутера
 -p222          | Подключение к порту 222  
-2) Вопрос *Are you sure you want to continue connecting (yes/no/[fingerprint])? yes* появляется только если подключение ранее не осуществлялось, или изменился отвечаток учтройства.  
+2) Вопрос *Are you sure you want to continue connecting (yes/no/[fingerprint])? yes* появляется только если подключение ранее не осуществлялось, или изменился отпечаток устройства.  
 Вручную пишем ***yes*** и жмём *Enter*.  
 3) Вводим пароль от пользователя *root*. По умолчанию это *keenetic*, если Вы не меняли пароль самостоятельно. О смене пароля пользователю *root* есть в [оригинальной статье по установке Entware](https://help.keenetic.com/hc/ru/articles/360021214160).  
 ### При вводе пароля в окне не отображается ввод символов!  
@@ -47,7 +47,7 @@ root           | Имя пользователя entware
 ```shell
 opkg update && opkg upgrade
 ```
-![opkg update & opgrade](!img/05__opkg-upd_and_upg_DONE.png)  
+![opkg update & upgrade](!img/05__opkg-upd_and_upg_DONE.png)  
 
 Устанавливаем дополнительные пакеты:  
 Справедливости ради, обязателен тут только *curl*  

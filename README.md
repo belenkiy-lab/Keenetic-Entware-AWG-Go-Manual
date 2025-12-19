@@ -1,4 +1,4 @@
-$\textcolor{green}{\text{v2025-12-17}}$
+$\textcolor{green}{\text{v2025-12-19}}$
 # Инструкция по работе Keenetic Entware + AWG-Go 1.5
 ***
 
@@ -30,6 +30,7 @@ $\textcolor{green}{\text{v2025-12-17}}$
 * [Установка модуля AWG-Go для Entware](blob/01__Entware_AWG-Go_Install/Entware_AWG-Go_Install.md)  
   * [Использование модуля AWG-Go на KeenOS 4.3](blob/02__KeenOS_4.3/KeenOS_4.3.md)  
   * [Использование модуля AWG-Go на KeenOS 5.0](blob/02__KeenOS_5.0_(OpkgTun)/KeenOS_5.0_(OpkgTun).md)  
+* [Создание резервной копии уже настроенной Entware >>](blob/03__Entware_backup/Entware_backup.md)  
 ***
 
 # Полезные ссылки

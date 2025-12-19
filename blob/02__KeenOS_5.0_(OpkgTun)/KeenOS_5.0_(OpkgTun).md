@@ -97,7 +97,7 @@ mv /opt/etc/init.d/S89amnezia-wg-quick /opt/etc/init.d/K89amnezia-wg-quick
 ## 5) Пример настройки маршрутизации по доменным именам  
 Переходим в настройки маршрутизации по DNS и добавляем список доменных имён и/или IP:  
 ![WebUI DNS Routes](!img/05__Go-to_DNS-Routes.png)  
-> $\textcolor{orange}{\text{Диапазоны IP нельзя укзывать в списках маршрутов DNS!}}$   
+> $\textcolor{orange}{\text{Диапазоны IP нельзя указывать в списках маршрутов DNS!}}$   
 > $\textcolor{orange}{\text{Для диапазонов IP - используйте стандартную маршрутизацию из раздела WebUI "IPv*-маршруты."}}$
 
 Для примера создадим список из трёх сайтов:  
@@ -128,4 +128,5 @@ mv /opt/etc/init.d/S89amnezia-wg-quick /opt/etc/init.d/K89amnezia-wg-quick
 
 ***
 ***
+### [Создание резервной копии уже настроенной Entware >>](/../../blob/main/blob/03__Entware_backup/Entware_backup.md)  
 # [<< На главную](/../../../)
