@@ -15,6 +15,9 @@ $\textcolor{green}{\text{v2025-12-19}}$
 Нам требуется добавить в conf-файл параметры пакетов имитации *i1...i5*.  
 В качестве примера возьмём [готовые параметры пакетов *i1...i5*](https://voidwaifu.github.io/Special-Junk-Packet-List/):  
 ![voidwaifu](!img/02__SpecialJunk.png)  
+> $\textcolor{red}{\text{ВНИМАНИЕ!}}$ Пакеты, заканчивающиеся подоным образом  
+> ![Wrong Type](!img/02__SpecialJunk_WARN.png)  
+> НЕ БУДУТ РАБОТАТЬ на роутере и будут вызывать ошибку ***Unable to modify interface: Invalid argument***  
 
 В результате у нас должен получиться файл со следующей структурой:
 ![AWG 1.5\2.0 conf-file example](!img/03__awg0_with_SpecialJunk.png)  
