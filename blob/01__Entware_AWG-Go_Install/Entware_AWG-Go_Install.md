@@ -8,6 +8,7 @@ $\textcolor{green}{\text{v2025-12-17}}$
 
 В идеале ещё включить игнорирование DNS провайдера:  
 ![KeenOS ignore DNS](!img/01__KeenOS_ignore-DNS.png)
+> $\textcolor{orange}{\text{Однако есть провайдеры, которые требуют наличие своих DNS, иначе интернет вовсе отсутствует!}}$
 
 
 ## 2) Подключаемся по SSH к Entware роутера
