@@ -56,7 +56,8 @@ cmd_status() {
     if pgrep -f "$PROCS $OPKGTUN_INTERFACE"  > /dev/null; then
         awg show $OPKGTUN_INTERFACE | grep "latest"
         echo =============================================================
-        echo "$OPKGTUN_INTERFACE returned VPS adress:" && curl --interface opkgtun0 ifconfig.me --max-time 2
+        echo "$OPKGTUN_INTERFACE returned VPS adress:"
+        curl --interface $OPKGTUN_INTERFACE ifconfig.me --max-time 2
         echo ""
         echo =============================================================
         echo "" && exit 1
