@@ -1,4 +1,4 @@
-$\textcolor{green}{\text{v2025-12-19}}$
+$\textcolor{green}{\text{v2025-12-21}}$
 # Использование AWG-Go c KeenOS 5.0
 ***
 
@@ -83,7 +83,15 @@ mv /opt/etc/init.d/S89amnezia-wg-quick /opt/etc/init.d/K89amnezia-wg-quick
 ```
 
 
-## 4) Запуск AWG-Go через интерфейс OpkgTun
+## 4) Запуск AWG-Go через интерфейс OpkgTun  
+Доступные команды для скрипта *S52amneziawg-opkgtun0*:  
+Значение | Описание
+-------- | ---------------
+start    | Запуск AWG-Go на интерфейсе OpkgTun
+stop     | Остановка AWG-Go на интерфейсе OpkgTun
+restart  | Перезапуск AWG-Go на интерфейсе OpkgTun
+status   | Статистика
+
 В ssh-терминале запускаем скрипт:  
 ``` shell
 /opt/etc/init.d/S52amneziawg-opkgtun0 start
