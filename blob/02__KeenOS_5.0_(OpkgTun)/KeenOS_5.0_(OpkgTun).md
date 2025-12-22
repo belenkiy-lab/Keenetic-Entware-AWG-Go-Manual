@@ -1,4 +1,4 @@
-$\textcolor{green}{\text{v2025-12-21}}$
+$\textcolor{green}{\text{v2025-12-22}}$
 # Использование AWG-Go c KeenOS 5.0
 ***
 
@@ -71,10 +71,10 @@ $\textcolor{green}{\text{v2025-12-21}}$
 
 
 ## 3) Скрипты запуска  
-Для работы AWG-Go с интерфейсом ***OpkgTun0*** требуется добавить в роутер другой скрипт запуска *S52amneziawg-opkgtun0*.  
+Для работы AWG-Go с интерфейсом ***OpkgTun0*** требуется добавить в роутер другой скрипт запуска *S52awg-opkgtun0*.  
 Скачать скрипт в папку запуска можно вводом команды:  
 ``` shell
-cd /opt/etc/init.d/ && curl -OLf "https://gitlab.com/ShidlaSGC/keenetic-entware-awg-go/-/raw/main/blob/02__KeenOS_5.0_(OpkgTun)/S52amneziawg-opkgtun0" && chmod +x S52amneziawg-opkgtun0
+cd /opt/etc/init.d/ && curl -OLf "https://gitlab.com/ShidlaSGC/keenetic-entware-awg-go/-/raw/main/blob/02__KeenOS_5.0_(OpkgTun)/S52awg-opkgtun0" && chmod +x S52awg-opkgtun0
 ```
 
 Так же если требуется отключить автозапуск  */opt/etc/init.d/S89amnezia-wg-quick*- нужно переименовать *S89amnezia-wg-quick* в ***K**89amnezia-wg-quick*. Это можно сделать или через общую сетевую папку или через команду:  
@@ -84,22 +84,32 @@ mv /opt/etc/init.d/S89amnezia-wg-quick /opt/etc/init.d/K89amnezia-wg-quick
 
 
 ## 4) Запуск AWG-Go через интерфейс OpkgTun  
-Доступные команды для скрипта *S52amneziawg-opkgtun0*:  
-Значение | Описание
--------- | ---------------
-start    | Запуск AWG-Go на интерфейсе OpkgTun
-stop     | Остановка AWG-Go на интерфейсе OpkgTun
-restart  | Перезапуск AWG-Go на интерфейсе OpkgTun
-status   | Статистика
+Доступные команды для скрипта *S52awg-opkgtun0*:  
+Значение   | Описание
+---------- | ---------------
+start      | Запуск AWG-Go на интерфейсе OpkgTun
+stop       | Остановка AWG-Go на интерфейсе OpkgTun
+restart    | Перезапуск AWG-Go на интерфейсе OpkgTun
+status     | Статистика
+speedtest  | Проверка скорости соединения с помощью *iperf3* через *OpkgTun*  
 
 В ssh-терминале запускаем скрипт:  
 ``` shell
-/opt/etc/init.d/S52amneziawg-opkgtun0 start
+/opt/etc/init.d/S52awg-opkgtun0 start
 ```
 В ssh-терминале запуск выглядит примерно так:  
 ![AWG-Go OpkgTun start](!img/04__Start_awg0-opkgtun0.png)  
-После этого в WebUI появится информация о том, что интерфейс подключен и идут данные:  
+
+После команды *S52awg-opkgtun0 start* в WebUI появится информация о том, что интерфейс подключен и идут данные:  
 ![AWG-Go OpkgTun WebUI](!img/05__OpkgTun-Web.png)  
+
+Можно запусить проверку скорости соединения через интерфейс *OpkgTun*:  
+``` shell
+/opt/etc/init.d/S52awg-opkgtun0 speedtest
+```
+Ниже два примера вывода, когда всё прошло успешно и когда один адрес оказался недоступен:  
+![opkgtun speedtest 1](!img/04__awg0-opkgtun0_speed-test_1.png)  
+![opkgtun speedtest 2](!img/04__awg0-opkgtun0_speed-test_2.png)  
 
 
 ## 5) Пример настройки маршрутизации по доменным именам  
