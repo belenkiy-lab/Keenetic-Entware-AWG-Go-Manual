@@ -32,6 +32,8 @@ $\textcolor{green}{\text{v2025-12-19}}$
   * [Использование модуля AWG-Go на KeenOS 5.0](blob/02__KeenOS_5.0_(OpkgTun)/KeenOS_5.0_(OpkgTun).md)  
 * [Создание резервной копии уже настроенной Entware](blob/03__Entware_backup/Entware_backup.md)  
 ***
+***
+***
 
 # Полезные ссылки
 * [Описание протокола AWG и параметров конфигурации](https://storage.googleapis.com/amnezia/docs?m-path=/ru/documentation/amnezia-wg)  

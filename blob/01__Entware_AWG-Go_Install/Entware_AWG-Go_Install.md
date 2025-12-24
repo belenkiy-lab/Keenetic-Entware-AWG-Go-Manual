@@ -91,6 +91,8 @@ opkg install /opt/root/awg2-go/*.ipk
 ![opkg install ipk's](!img/08__opkg-inst_awg-go.png)  
 
 
+
+***
 ***
 ***
 ### [Использование AWG-Go c KeenOS 4.3 >>](/../../blob/main/blob/02__KeenOS_4.3/KeenOS_4.3.md)  
