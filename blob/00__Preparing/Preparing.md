@@ -60,6 +60,10 @@ $\textcolor{green}{\text{v2025-12-20}}$
 
 Дожидаемся окончания установки:  
 ![KeenOS entware install DONE](!img/09__Entware_install_DONE.png)  
+
+
+
+***
 ***
 ***
 ### [Установка модуля AWG-Go для Entware >>](/../../blob/main/blob/01__Entware_AWG-Go_Install/Entware_AWG-Go_Install.md)
