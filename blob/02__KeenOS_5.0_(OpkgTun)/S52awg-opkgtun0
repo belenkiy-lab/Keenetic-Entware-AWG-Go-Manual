@@ -1,12 +1,13 @@
 #!/bin/sh
 
-# v2025-12-25 Fin
+
 ENABLED=yes
 PROCS="amneziawg-go"
 PATH="/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 DESC="AmneziaWG OpkgTun"
 PROGRAM="${0##*/}"
 AWG_BIN="/opt/bin/awg"
+VER="v2025-12-25 Fin2"
 KEENOS_VER_MAJOR=$(ndmc -c "show version" | grep -o 'title: [0-9]' | cut -d' ' -f2)
 KEENOS_VER=$(ndmc -c "show version" | grep -oE 'title: [0-9.]+' | cut -d' ' -f2)
 
@@ -146,7 +147,8 @@ cmd_status() {
             log "ℹ️ AmneziaWG for \e[3m$OPKGTUN_INTERFACE\e[0m NOT running!"
         fi
     fi
-    echo "===================================================================" && echo ""
+    echo "==================================================================="
+    echo -e "                                            \e[3;1;34m $VER \e[0m" && echo ""
 }
 
 
