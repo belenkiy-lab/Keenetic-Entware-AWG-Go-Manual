@@ -1,4 +1,4 @@
-$\textcolor{green}{\text{v2025-12-19}}$
+$\textcolor{green}{\text{v2025-12-25}}$
 
 # Использование AWG-Go c KeenOS 4.3  
 ***
@@ -47,7 +47,7 @@ TX bytes | Отправленные байты/кибибайты/e.t.c.
 ## 4) Установка MagiTrickle  
 >MagiTrickle (произносится как Мэджитрикл) – утилита для точечной маршрутизации сетевого трафика по заданным доменным именам. Представляет собой установочный пакет, устанавливаемый в дополнение к операционной системе маршрутизатора.  
 
-### В целом установка более чем полностью описана на [гите проекта](https://github.com/MagiTrickle/MagiTrickle) или [на сайте проекта](https://magitrickle.dev) или [форум Keenetic](https://forum.keenetic.ru/topic/20125-magitrickle).  
+### В целом установка более чем полностью описана на [GitHub проекта](https://github.com/MagiTrickle/MagiTrickle) или [на сайте проекта](https://magitrickle.dev) или [форум Keenetic](https://forum.keenetic.ru/topic/20125-magitrickle) или [GitLab проекта](https://gitlab.com/magitrickle/magitrickle).  
 
 1. Добавление репозитория в пакетный менеджер:
 ```shell
@@ -91,6 +91,7 @@ opkg update && opkg install magitrickle
 
 Например создаём группу "Сайты определения IP" и добавляем в группу сайты *2ip.io* и *browserleaks.com* и жмём кнопку сохранения конфигурации.  
 ![MagiTrickle group](!img/08__Create_MT_Group.png)
+>Обратите внимане на интерфейс *awg0* на скриншоте. Его надо выбрать для того, что бы запросы из списка ниже уходили в данный интерфейс!  
 
 Теперь если сбросить кеш браузера (или просто перезапустить его) и зайти на сайт [2ip.io](https://2ip.io), то определяется IP нашего VPS:  
 ![VPS IP](!img/09__Check-IP.png)  
