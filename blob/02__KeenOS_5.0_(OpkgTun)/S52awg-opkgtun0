@@ -7,7 +7,7 @@ PATH="/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/
 DESC="AmneziaWG OpkgTun"
 PROGRAM="${0##*/}"
 AWG_BIN="/opt/bin/awg"
-VER="v2025-12-25 Fin2"
+VER="v2025-12-26 Fin"
 KEENOS_VER_MAJOR=$(ndmc -c "show version" | grep -o 'title: [0-9]' | cut -d' ' -f2)
 KEENOS_VER=$(ndmc -c "show version" | grep -oE 'title: [0-9.]+' | cut -d' ' -f2)
 
@@ -116,9 +116,25 @@ cmd_status() {
 
     echo -e "==================== INTERFACE \e[3m$OPKGTUN_INTERFACE\e[0m STATUS ===================="
     if [ ! -d "/sys/class/net/$OPKGTUN_INTERFACE" ]; then
-        echo -e "❌ Interface \e[3m$OPKGTUN_INTERFACE\e[0m does NOT exist!"
+        die "❌ Interface \e[3m$OPKGTUN_INTERFACE\e[0m does NOT exist!"
     else
-        ip -c -br link show dev "$OPKGTUN_INTERFACE"
+
+#        ip -c -br link show dev "$OPKGTUN_INTERFACE"
+    INTERFACE_INFO=$(ip addr show $OPKGTUN_INTERFACE 2>/dev/null)
+    if [ -z "$INTERFACE_INFO" ]; then
+        die "❌ Interface \e[3m$OPKGTUN_INTERFACE\e[0m does NOT exist!" && exit 1
+    fi
+    INTERFACE_IP=$(echo "$INTERFACE_INFO" | grep -oE 'inet [0-9.]+' | cut -d' ' -f2)
+    [ -z "$INTERFACE_IP" ] && INTERFACE_IP="❌ Not assigned"
+    RAW_STATE=$(echo "$INTERFACE_INFO" | grep -oE 'state [A-Z]+' | cut -d' ' -f2)
+    case "$RAW_STATE" in
+        UP)      INTERFACE_STATE="\033[1;32mUP\033[0m" ;;
+        DOWN)    INTERFACE_STATE="\033[1;31mDOWN\033[0m" ;;
+        *)       INTERFACE_STATE="\033[1;33mUNKNOWN\033[0m" ;;
+    esac
+    INTERFACE_MTU=$(echo "$INTERFACE_INFO" | grep -oE 'mtu [0-9]+' | cut -d' ' -f2)
+    log "IP: \e[3m$INTERFACE_IP\e[0m | State: \e[3m$INTERFACE_STATE\e[0m | MTU: \e[3m$INTERFACE_MTU\e[0m"
+
         
         if pgrep -f "/opt/bin/$PROCS $OPKGTUN_INTERFACE" > /dev/null; then
             logger -t "[Entware AWG-Go][Info]" "AWG-Go for \"$OPKGTUN_INTERFACE\" with \"$AWG_CONF\" running"
@@ -223,6 +239,7 @@ log() {
 
 die() {
     log "ERROR: $*" >&2
+    echo -e "                                            \e[3;1;34m $VER \e[0m" && echo ""
     echo "" && exit 1
 }
 
