@@ -1,4 +1,4 @@
-Based on https://gitlab.com/ShidlaSGC/keenetic-entware-awg-go
+Based on https://gitlab.com/ShidlaSGC/keenetic-entware-awg-go (данный репозиторий ежедневно синхронизируется с источником)
 
 $\textcolor{green}{\text{v2025-12-26}}$
 # Инструкция по работе Keenetic Entware + AWG-Go 1.5
