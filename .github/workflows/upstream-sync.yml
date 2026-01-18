@@ -1,0 +1,69 @@
+name: Sync from GitLab upstream
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *" # каждый день 03:17 UTC
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add upstream and fetch
+        run: |
+          git remote add upstream https://gitlab.com/ShidlaSGC/keenetic-entware-awg-go.git || true
+          git fetch upstream --prune --tags
+
+          # определить upstream default branch (HEAD)
+          UPSTREAM_BRANCH="$(git remote show upstream | sed -n 's/.*HEAD branch: //p' | tr -d '\r')"
+          echo "UPSTREAM_BRANCH=$UPSTREAM_BRANCH" >> $GITHUB_ENV
+
+      - name: Create/update upstream-sync branch
+        run: |
+          git checkout -B upstream-sync "upstream/${UPSTREAM_BRANCH}"
+          git push -f origin upstream-sync
+          git push --tags origin
+
+      - name: Detect base branch (repo default)
+        run: |
+          git fetch origin
+          BASE_BRANCH="$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')"
+          echo "BASE_BRANCH=$BASE_BRANCH" >> $GITHUB_ENV
+          echo "Base branch: $BASE_BRANCH"
+
+      - name: Create PR if needed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # если уже есть открытый PR из upstream-sync — ничего не делаем
+          existing="$(gh pr list --head upstream-sync --state open --json number -q '.[0].number')"
+          if [ -n "$existing" ]; then
+            echo "PR already open: #$existing"
+            exit 0
+          fi
+
+          # если нет различий — PR не нужен
+          if git diff --quiet "origin/${BASE_BRANCH}...origin/upstream-sync"; then
+            echo "No changes to sync."
+            exit 0
+          fi
+
+          gh pr create \
+            --base "${BASE_BRANCH}" \
+            --head "upstream-sync" \
+            --title "Sync from GitLab upstream" \
+            --body "Automated sync from https://gitlab.com/ShidlaSGC/keenetic-entware-awg-go"
