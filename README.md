@@ -1,3 +1,5 @@
+Based on https://gitlab.com/ShidlaSGC/keenetic-entware-awg-go
+
 $\textcolor{green}{\text{v2025-12-26}}$
 # Инструкция по работе Keenetic Entware + AWG-Go 1.5
 ***
