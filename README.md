@@ -1,5 +1,5 @@
-$\textcolor{green}{\text{v2025-12-26}}$
-# Инструкция по работе Keenetic Entware + AWG-Go 1.5
+$\textcolor{green}{\text{v2026-02-12}}$
+# Инструкция по работе Keenetic Entware + модуль AWG-Go с поддержкой протоколов AWG 1.5 и AWG 2.0
 ***
 
 
@@ -41,6 +41,7 @@ $\textcolor{green}{\text{v2025-12-26}}$
 * [Список готовых пакетов *i1...i5* для протокола AWG](https://voidwaifu.github.io/Special-Junk-Packet-List/)  
 * [Нативная поддержка AWG 1.5\2.0 в прошивке Keenetic](https://forum.keenetic.ru/topic/21777-amneziawg-15-%D0%B8-20/)  
 * [Тема форума про модуль AWG-Go для Entware](https://forum.keenetic.ru/topic/18794-amneziawg-go-%D0%B4%D0%BB%D1%8F-entware/)  
+* [!NEW!] [AWG-Manager](https://forum.keenetic.ru/topic/26510-awg-manager-%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%82%D1%83%D0%BD%D0%BD%D0%B5%D0%BB%D1%8F%D0%BC%D0%B8-amneziawg-%D0%B2-entware/) - работа AWG-Kernel на Entware. По идее это должно работать граздо шустрее, чем AWG-Go.  
 * [Архив прошивок Keenetic](https://osvault.keenetic.net/)  
 * [Архив прошивок Netcraze](https://osvault.netcraze.ru/)  
 * MagiTrickle: [GitHub](https://github.com/MagiTrickle/MagiTrickle) | [Site](https://magitrickle.dev) | [Keenetic Forum](https://forum.keenetic.ru/topic/20125-magitrickle)  
