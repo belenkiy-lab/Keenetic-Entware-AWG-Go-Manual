@@ -1,4 +1,4 @@
-$\textcolor{green}{\text{v2026-02-12}}$
+$\textcolor{green}{\text{v2026-03-04}}$
 # Использование AWG-Go c KeenOS 5.0
 ***
 
@@ -194,7 +194,10 @@ nperf.net
 ***
 
 ## 8) Если понадобится удалить AWG-Go  
-1) Entware - просто отформатировать носитель с entware.  
+1) Остановить работу скрипта:  
+   ``` shell
+     /opt/etc/init.d/S52awg-opkgtun0 stop
+   ```
 2) Чтобы удалить интерфейс *OpkgTun0* из WebUI - выполнить в cli роутера:  
    ``` shell
      no interface OpkgTun0  
@@ -205,6 +208,16 @@ nperf.net
     system configuration save
     ```
     ![System configuration save](!img/14__SystemConfig_sevel.png)
+
+4) Удалить Entware - просто отформатировать носитель с Еntware
+   <details>
+   <summary>Или удалить пакеты и файлы из Entware</summary>
+   a) Удалить пакеты амнезии через ssh: opkg remove amnezia*  
+
+   b) Удалить файл скрипта "S52awg-opkgtun0" из /opt/etc/init.d/  
+
+   с) Удалить файл конфигурации из "/opt/etc/amnezia/amneziawg/"  
+   </details>
 
 
 
