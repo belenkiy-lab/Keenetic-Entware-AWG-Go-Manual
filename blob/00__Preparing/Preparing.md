@@ -1,18 +1,24 @@
-$\textcolor{green}{\text{v2025-12-20}}$
+$\textcolor{green}{\text{v2026-02-12}}$
 # Подготовка
 Для собственного удобства я буду использовать редактор [Notepad++](https://github.com/notepad-plus-plus/notepad-plus-plus).  
 
 #### Обратите внимание, что ***все*** файлы должны быть с обозначением конца строки в файле в Unix (LF):  
 ![Unix (LF)](!img/00__Unix-LF.png)  
 ***
+#### На текущий момент из Amnezia Premium можно получить файл конфигурации для протокола версии AWG 1.0  
+***
+### Если у Вас файл конфигурации AWG 2.0 - переходите сразу к п.п.2  
+![AWG 2.0](!img/04__awg0_check.png)  
+***  
 
 
-## 1) Подготовка нативного/оригинального файла AWG (conf-файла)
+## 1) Подготовка нативного/оригинального файла AWG 1.0 (conf-файла)
 Получить файл можно в приложении AmneziaVPN. Как именно - Вы можете посмотреть в [документации](https://storage.googleapis.com/amnezia/docs?m-path=/ru/documentation/instructions/share-connection).  
 Пример внутренней структуры conf-файла:  
 ![AWG 1.0 conf-file example](!img/01__awg0.png)  
 
 Нам требуется добавить в conf-файл параметры пакетов имитации *i1...i5*.  
+**! Минимально требуется наличие параметра *i1* !**  
 В качестве примера возьмём [готовые параметры пакетов *i1...i5*](https://voidwaifu.github.io/Special-Junk-Packet-List/):  
 ![voidwaifu](!img/02__SpecialJunk.png)  
 > $\textcolor{red}{\text{ВНИМАНИЕ!}}$ Пакеты, заканчивающиеся подобным образом  
@@ -24,8 +30,9 @@ $\textcolor{green}{\text{v2025-12-20}}$
 
 
 ## 2) Проверка conf-файла с параметрами пакетов имитации *i1...i5*.  
-Для проверки conf-файл достаточно загрузить в AmneziaVPN версии не ниже 4.8.8.3.   
-А лучше всего в самую [актуальную версию](https://github.com/amnezia-vpn/amnezia-client/releases). На момент написания данной статьи это [версия 4.8.11.4](https://github.com/amnezia-vpn/amnezia-client/releases/tag/4.8.11.4).
+Для проверки conf-файл достаточно загрузить в приложение AmneziaVPN.   
+Для протокола AWG 1.5 это не ниже версии 4.8.8.3, лучше всего в [версию 4.8.11.4](https://github.com/amnezia-vpn/amnezia-client/releases/tag/4.8.11.4) или выше.  
+Для протокола AWG 2.0 это не ниже [версии 4.8.12.9](https://github.com/amnezia-vpn/amnezia-client/releases/tag/4.8.12.9) или выше.  
 
 Для проверки используйте устройство, подключенное к той же сети, что и роутер.  
 Подключитесь через загруженный в приложение conf-файл.  
